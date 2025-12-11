@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="UnoApp.VideoGalery.Presentation.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UnoApp.VideoGalery.Presentation"
+    xmlns:uen="using:Uno.Extensions.Navigation.UI"
+    xmlns:utu="using:Uno.Toolkit.UI"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    NavigationCacheMode="Required">
+    <ScrollViewer IsTabStop="True">
+        <Grid utu:SafeArea.Insets="VisibleBounds">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <utu:NavigationBar Content="{Binding Title}" />
+
+            <StackPanel
+                Grid.Row="1"
+                Margin="10"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Spacing="16">
+                <Button
+                    AutomationProperties.AutomationId="NativeVideoButton"
+                    Command="{Binding GotoNativeVideo}"
+                    Content="Go to native video" />
+                <Button
+                    AutomationProperties.AutomationId="VLCVideoButton"
+                    Command="{Binding GotoVLCVideo}"
+                    Content="Go to vlc" />
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>
