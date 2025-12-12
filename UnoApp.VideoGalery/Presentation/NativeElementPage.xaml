@@ -20,12 +20,27 @@
             Grid.Row="1"
             HorizontalAlignment="Center"
             VerticalAlignment="Center">
-            <MediaPlayerElement AreTransportControlsEnabled="True" Source="{Binding VideoSource}" />
+            <MediaPlayerElement
+                Height="500"
+                AreTransportControlsEnabled="True"
+                AutoPlay="True"
+                Background="Transparent"
+                Source="{Binding VideoSource}" />
 
             <Button
+                Margin="10"
                 utu:AutoLayout.CounterAlignment="Start"
                 AutomationProperties.AutomationId="SelectVideoButton"
-                Command="{Binding SelectVideo}" />
+                Command="{Binding ShowPopupLoadVideoCommand}"
+                Content="Select file" />
+
+            <ToggleSwitch
+                Margin="10"
+                utu:AutoLayout.CounterAlignment="Start"
+                AutomationProperties.AutomationId="UseNativeElementRadioButton"
+                OffContent="No Subtitle"
+                OnContent="Subtitle" />
+            <CheckBox />
         </StackPanel>
     </Grid>
 </Page>
